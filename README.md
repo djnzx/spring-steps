@@ -6,8 +6,9 @@ and modified a bit according to questions being asked during the course
 
 ### Prerequisites
 
-- Java-core
+- Java Core
 - Java 8
 - OOP
 - Maven
-
+- ...
+- a bit of a life experience  :)
