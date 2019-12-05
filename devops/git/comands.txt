@@ -1,1 +1,4 @@
-git pull --allow-unrelated-histories
+git pull --allow-unrelated-histories origin master
+
+git checkout master
+git merge style
