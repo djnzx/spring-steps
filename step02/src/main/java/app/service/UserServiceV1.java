@@ -1,20 +1,22 @@
 package app.service;
 
 import app.entity.Person;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.util.LinkedList;
 import java.util.List;
 
+@Primary
 @Service
-public class UserService2 implements UserInterface {
+public class UserServiceV1 implements UserInterface {
 
   private final List<Person> content = new LinkedList<>();
 
-  public UserService2() {
-    content.add(new Person("Jim2"));
-    content.add(new Person("Jack2"));
-    content.add(new Person("John2"));
+  public UserServiceV1() {
+    content.add(new Person("Jim"));
+    content.add(new Person("Jack"));
+    content.add(new Person("John"));
   }
 
   @Override

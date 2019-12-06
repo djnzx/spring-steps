@@ -14,9 +14,7 @@ public class UserController {
   private UserInterface userService;
 
   public UserController(
-      @Autowired
-      @Qualifier(value = "us2")
-      UserInterface service) {
+      @Autowired @Qualifier(value = "US_V2") UserInterface service) {
     this.userService = service;
   }
 
