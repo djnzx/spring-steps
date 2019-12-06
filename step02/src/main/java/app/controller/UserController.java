@@ -11,10 +11,12 @@ import java.util.List;
 @RestController
 public class UserController {
 
-  private UserInterface userService;
+  private final UserInterface userService;
 
   public UserController(
-      @Autowired @Qualifier(value = "US_V2") UserInterface service) {
+      @Autowired
+      @Qualifier("UserService_V2")
+          UserInterface service) {
     this.userService = service;
   }
 

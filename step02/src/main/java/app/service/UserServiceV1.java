@@ -1,6 +1,7 @@
 package app.service;
 
 import app.entity.Person;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
@@ -12,6 +13,11 @@ import java.util.List;
 public class UserServiceV1 implements UserInterface {
 
   private final List<Person> content = new LinkedList<>();
+
+  @Bean
+  public UserInterface UserService_V1() {
+    return new UserServiceV1();
+  }
 
   public UserServiceV1() {
     content.add(new Person("Jim"));
