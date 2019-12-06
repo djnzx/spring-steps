@@ -3,6 +3,7 @@ package app.controller;
 import app.entity.Person;
 import app.service.UserInterface;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -12,7 +13,10 @@ public class UserController {
 
   private UserInterface userService;
 
-  public UserController(@Autowired UserInterface service) {
+  public UserController(
+      @Autowired
+      @Qualifier(value = "us2")
+      UserInterface service) {
     this.userService = service;
   }
 

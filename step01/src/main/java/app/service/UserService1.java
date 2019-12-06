@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import java.util.LinkedList;
 import java.util.List;
 
-@Primary
+//@Primary
 @Service
 public class UserService1 implements UserInterface {
 
