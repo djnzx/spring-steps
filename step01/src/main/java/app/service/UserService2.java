@@ -7,21 +7,23 @@ import java.util.LinkedList;
 import java.util.List;
 
 @Service
-public class UserService {
+public class UserService2 implements UserInterface {
 
   private final List<Person> content = new LinkedList<>();
 
-  public UserService() {
-    content.add(new Person("Jim"));
-    content.add(new Person("Jack"));
-    content.add(new Person("John"));
+  public UserService2() {
+    content.add(new Person("Jim2"));
+    content.add(new Person("Jack2"));
+    content.add(new Person("John2"));
   }
 
-  public List<Person> getAll() {
+  @Override
+  public List<Person> get() {
     return content;
   }
 
-  public void addPerson(String name) {
+  @Override
+  public void add(String name) {
     content.add(new Person(name));
   }
 
