@@ -46,3 +46,6 @@ and modified a bit according to questions being asked during the course
 
 * the same as step01 +
 * resolving different implementation for one interface as a dependency
+* @Primary
+* @Bean
+* @Qualifier

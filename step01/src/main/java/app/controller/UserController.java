@@ -21,21 +21,31 @@ public class UserController {
     this.userService = service;
   }
 
-  @GetMapping("/users")
+  @RequestMapping(method = RequestMethod.GET, path = "/users")
   public List<Person> get_all_users() {
     return userService.get();
   }
 
-  // we use `@PathVariable` when variable is the part of the PATH
-  @GetMapping("/users/add/{name}")
-  public List<Person> add1(@PathVariable("name") String name) {
+  @GetMapping("/users/add1/{id}/{name}")
+  public List<Person> add1(@PathVariable("id") int id, @PathVariable("name") String name) {
     userService.add(name);
     return userService.get();
   }
 
-  // we use `@PathParam` when variable is passed via /users/add?name=Jim
-  @RequestMapping(method = RequestMethod.POST, path = "/users/add")
+  @GetMapping("/users/add2")
   public List<Person> add2(@RequestParam("name") String name) {
+    userService.add(name);
+    return userService.get();
+  }
+
+  @RequestMapping(method = RequestMethod.POST, path = "/users/add3/{id}/{name}")
+  public List<Person> add3(@PathVariable("id") int id, @PathVariable("name") String name) {
+    userService.add(name);
+    return userService.get();
+  }
+
+  @RequestMapping(method = RequestMethod.POST, path = "/users/add4")
+  public List<Person> add4(@RequestParam("name") String name) {
     userService.add(name);
     return userService.get();
   }
