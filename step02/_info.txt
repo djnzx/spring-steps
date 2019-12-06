@@ -16,3 +16,5 @@
 - params binding
   - @PathVariable - "/users/add1/{name}"
   - @RequestParam - "/users/add2?name=Johny"
+  - @QueryParam   - Jersey (JAX-RS) (variable) - DO NOT Use in SPRING
+  - @PathParam    - Jersey (JAX-RS) (path)     - DO NOT Use in SPRING
