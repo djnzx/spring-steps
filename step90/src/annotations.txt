@@ -1,0 +1,35 @@
+--- structural / bean:
+@SpringBootApplication
+
+@Component
+@Configuration
+@Controller
+@RestController
+@Service
+
+@Autowired
+@Primary
+@Qualifier
+
+--- request mapping:
+@RequestMapping
+@GetMapping
+@PostMapping
+@...Mapping
+...
+@RequestParam
+@PathVariable
+
+--- validation:
+
+
+--- lombok:
+@Slf4j
+@Data
+
+
+--- testing:
+@RunWith()
+@SpringBootTest
+@Test
+
