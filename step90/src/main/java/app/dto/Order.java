@@ -1,5 +1,3 @@
-//tag::all[]
-//tag::allButValidation[]
 package app.dto;
 
 import lombok.Data;
@@ -8,6 +6,9 @@ import org.hibernate.validator.constraints.CreditCardNumber;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Spring MVC supports validation through the Java Bean Validation API
@@ -56,6 +57,14 @@ public class Order {
   //tag::allButValidation[]
   private String ccCVV;
 
+  private Long id;
+
+  private Date placedAt;
+
+  private List<Taco> tacos = new ArrayList<>();
+
+  public void addDesign(Taco design) {
+    this.tacos.add(design);
+  }
+
 }
-//end::allButValidation[]
-//end::all[]
