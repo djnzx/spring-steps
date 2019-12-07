@@ -1,28 +1,31 @@
 package app.service;
 
-import app.entity.Person;
+import app.entity.User;
 import org.springframework.stereotype.Service;
 
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class UserService {
 
-  private final List<Person> content = new LinkedList<>();
+  private final Map<Integer, User> data = new HashMap<>();
 
   public UserService() {
-    content.add(new Person("Jim"));
-    content.add(new Person("Jack"));
-    content.add(new Person("John"));
+    data.put(1, new User("Jim"));
+    data.put(2, new User("John"));
   }
 
-  public List<Person> get() {
-    return content;
+  public Collection<User> getAll() {
+    return data.values();
   }
 
-  public void add(String name) {
-    content.add(new Person(name));
+  public User getOne(int id) {
+    return data.get(id);
   }
 
+  public User createOne(String name) {
+    User user = new User(name);
+    data.put(data.size() + 1, user);
+    return user;
+  }
 }
