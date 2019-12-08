@@ -5,7 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * http://localhost:9000/sege
- * http://localhost:9000/semvr
+ * http://localhost:9000/semvc
+ * http://localhost:9000/serest
  */
 @SpringBootApplication
 public class ApplicationSession {

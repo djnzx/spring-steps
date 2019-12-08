@@ -27,6 +27,9 @@
 @Slf4j
 @Data
 
+--- session:
+@SessionAttributes - mark,
+@ModelAttribute
 
 --- testing:
 @RunWith()
