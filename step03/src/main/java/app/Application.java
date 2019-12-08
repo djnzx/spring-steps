@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * http://localhost:9000/users
+ * http://localhost:9000/mvcse
  */
 @SpringBootApplication
 public class Application {
