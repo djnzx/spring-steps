@@ -4,11 +4,12 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * http://localhost:9000/mvcse
+ * http://localhost:9000/sege
+ * http://localhost:9000/semvr
  */
 @SpringBootApplication
-public class Application {
+public class ApplicationSession {
   public static void main(String[] args) {
-    SpringApplication.run(Application.class);
+    SpringApplication.run(ApplicationSession.class);
   }
 }

@@ -7,13 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
- * ========================
- * MVC Session explanation:
- * ========================
+ * =============================
+ * Session support by Spring MVC
+ * =============================
  */
 @Slf4j
 @Controller
-@RequestMapping("/mvcse")
+@RequestMapping("/semvc")
 /**
  * step 1.
  * declaration of our intentions:
@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
  * to further VALUE extraction from the SESSION
  */
 @SessionAttributes(KeysNames.LongLivingObjectName)
-public class MvcSessionController {
+public class SessionControllerMvc {
 
   /**
    * step 2.
