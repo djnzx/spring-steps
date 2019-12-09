@@ -1,0 +1,5 @@
+this example taken from
+
+https://github.com/habuma/spring-in-action-5-samples.git
+
+chapter 3.2
