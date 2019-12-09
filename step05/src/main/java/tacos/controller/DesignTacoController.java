@@ -68,8 +68,9 @@ public class DesignTacoController {
 
   @PostMapping
   public String processDesign(
-      @Valid @ModelAttribute("design") Taco taco, Errors errors, // @Valid - imply @ModelAttribute by type
-      @ModelAttribute("order") Order order) {                    // any other @ModelAttribute - find
+      Model model,
+/*      @Valid @ModelAttribute("design")*/ Taco taco, Errors errors, // @Valid - imply @ModelAttribute by type
+      /*@ModelAttribute("order")*/ Order order) {                    // any other @ModelAttribute - find
     /**
      * POST req came like this:
      * ingredients=FLTO&ingredients=COTO&ingredients=CHED&name=ASDFG
@@ -77,6 +78,8 @@ public class DesignTacoController {
      * String[]: ingredients
      * String: name
      */
+    System.out.println("======== Model ===========");
+    System.out.println(model);
     System.out.println("======== TACO ===========");
     // 1. Taco object created ""by Spring"" because there is no object Taco.        - line 47: public Taco design() {...}
     // 2. Taco object taken from the session ""by Spring"" - because we declared it - line 71: @ModelAttribute("design") Taco taco
