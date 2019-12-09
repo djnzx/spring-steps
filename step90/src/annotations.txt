@@ -6,19 +6,36 @@
 @Controller
 @RestController
 @Service
+@ExceptionHandler - handling exceptions
 
 @Autowired
 @Primary
 @Qualifier
 
 --- request mapping:
-@RequestMapping
+@RequestMapping({"/myfoos/optional", "/myfoos/optional/{id}"})
 @GetMapping
 @PostMapping
-@...Mapping
-...
-@RequestParam
-@PathVariable
+@PutMapping
+@DeleteMapping
+@PatchMapping
+
+@ResponseBody - put all the produced result to response body, treat all as content, not as view
+@ResponseStatus
+
+@RequestParam - extract query parameters from URL (or body for non-GET), even files
+@RequestParam - is encoded : ?id=ab+c -> id=ab c
+@RequestParam(defaultValue = "test") String id
+@RequestParam(required = false) String id
+@RequestParam Optional<String> id
+@RequestParam List<String> id
+@RequestParam Map<String,String> allParams
+
+@RequestBody - extract param from the body / Form from POST, etc
+@PostMapping("/save") void saveVehicle(@RequestBody Vehicle vehicle)
+
+
+@PathVariable - it’s not encoded, because it is part of path
 
 --- validation:
 
@@ -29,10 +46,29 @@
 
 --- session:
 @SessionAttributes - mark,
-@ModelAttribute
+
+--- MVC model
+@ModelAttribute - access elements that are already in the model
+
+@PostMapping("/assemble")
+void assembleVehicle(@ModelAttribute Vehicle vehicle) {
+    // ...
+}
+
+@ModelAttribute("vehicle")
+Vehicle getVehicle() {
+    // ...
+}
 
 --- testing:
 @RunWith()
 @SpringBootTest
 @Test
 
+@CrossOrigin - security filter to allow cross-origin requests
+
+--- conventional servlet support
+@WebServlet
+@WebFilter
+@WebListener
+@ServletComponentScan
