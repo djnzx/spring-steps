@@ -5,6 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * http://localhost:9000/users
+ * http://localhost:9000/msg
  */
 @SpringBootApplication
 public class Application {
