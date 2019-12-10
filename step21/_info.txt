@@ -1,0 +1,17 @@
+1. add dependency in pom.xml
+2. spring bean auto configuration will do everything
+    - create all servlet filters
+    - tie everything together
+    - provide auth mechanism
+    - even provide login window
+    - provide BASIC auth with user= and password=
+    - read more at page 86
+    - test everything in incognito mode!
+3. create class SecurityConfig
+4. put annotations @Configuration and @EnableWebSecurity
+5. several ways to do auth:
+    - im memory
+    - jdbc
+    - LDAP based
+    - A custom user details service
+
