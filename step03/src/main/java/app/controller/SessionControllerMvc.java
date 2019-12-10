@@ -31,7 +31,9 @@ public class SessionControllerMvc {
    */
   @ModelAttribute(KeysNames.LongLivingObjectName)
   public LongLivingCreature theRuleHowToCreateOurCreature() {
-    return new LongLivingCreature();
+    LongLivingCreature llc = new LongLivingCreature();
+    llc.newUser();
+    return llc;
   }
 
   /**
@@ -44,21 +46,18 @@ public class SessionControllerMvc {
   public String handler_get(
       @ModelAttribute(KeysNames.LongLivingObjectName) LongLivingCreature creature
   ) {
-    int value = creature.getId();
-    creature.setId(value+1);
-    System.err.printf("GET Req came, value:%d\n", value);
-    // put your code here ...
+    System.out.printf("I did identify you:%d\n", creature.getId());
     return "empty";
   }
 
-  @PostMapping()
-  public String handler_post(
-      @ModelAttribute(KeysNames.LongLivingObjectName) LongLivingCreature creature
-  ) {
-    int value = creature.getId();
-    creature.setId(value+1);
-    System.err.printf("POST Req came, value:%d\n", value);
-    // put your code here ...
-    return "empty";
-  }
+//  @PostMapping()
+//  public String handler_post(
+//      @ModelAttribute(KeysNames.LongLivingObjectName) LongLivingCreature creature
+//  ) {
+//    int value = creature.getId();
+//    creature.setId(value+1);
+//    System.err.printf("POST Req came, value:%d\n", value);
+//    // put your code here ...
+//    return "empty";
+//  }
 }
