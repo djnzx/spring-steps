@@ -44,8 +44,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    * Our custom implementation
    */
   @Bean
-  public UserDetailsService userDetailsServiceHashMapPlain() {
+  @Override
+  public UserDetailsService userDetailsService() {
     return new InMemoryUserDetailsManager(auth.usersDetails());
   }
-
 }
