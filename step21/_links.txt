@@ -4,4 +4,5 @@ https://spring.io/guides/topicals/spring-security-architecture/
 https://spring.io/guides/gs/securing-web/
 https://docs.spring.io/autorepo/docs/spring-security/5.2.1.RELEASE/guides/html5/
 https://stackabuse.com/password-encoding-with-spring-security/
+https://www.youtube.com/watch?v=8rnOsF3RVQc
 https://www.youtube.com/watch?v=fjkelzWNSuA&t=928s

@@ -3,6 +3,7 @@ package tacos.security;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -37,7 +38,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //        .cors()
 //          .and()
         .authorizeRequests()
-          .antMatchers("/login")
+//        .antMatchers("/u/**").permitAll()
+//        .antMatchers("/", "/home", "/about", "/resources/**").permitAll()
+//        .antMatchers("/admin/**").hasRole("ADMIN")
+//        .antMatchers("/user/**").hasRole("USER")
+//        .antMatchers(HttpMethod.GET, "/api").permitAll()
+//        .antMatchers("/db/**").access("hasRole('ADMIN') and hasRole('DBA')")
+        .antMatchers("/login")
             .permitAll()
           .anyRequest()
             .authenticated()
