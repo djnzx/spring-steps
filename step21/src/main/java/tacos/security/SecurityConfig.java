@@ -19,11 +19,8 @@ import java.util.Arrays;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-  private final Authentication auth;
-
   @Autowired
-  public SecurityConfig(Authentication authentication, DbUserRepo repo, PasswordEncoder enc) {
-    this.auth = authentication;
+  public SecurityConfig(DbUserRepo repo, PasswordEncoder enc) {
     // new user is going to be created here (with password already encoded)
     repo.save(new DbUser("mario", enc.encode("123"), Roles.a_user()));
   }
@@ -44,8 +41,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
    * Our custom implementation
    */
   @Bean
-  @Override
-  public UserDetailsService userDetailsService() {
+  public UserDetailsService userDetailsServiceMy(Authentication auth) {
     return new InMemoryUserDetailsManager(auth.usersDetails());
   }
 }
