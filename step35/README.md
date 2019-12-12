@@ -1,4 +1,4 @@
-## Spring Security 33. Configuration class added. Users hardcoded
+## Spring Security 35. Configuration class added. Users moved to separate class with proper encoding
 
 endpoints for testing
 
@@ -19,13 +19,15 @@ endpoints for testing
 ```
 - configuration class `MySecurityConfig` created
 - EVERYTHING is secured
-- users hardcoded
-    - user `jim` password `123`
-    - user `john` password `234`
 
 - no any management
 - http://localhost:8080/login  - login link added by spring security
 - http://localhost:8080/logout - logout link added by spring security
 
-- configuration class added
-- users hardcoded
+- class `UserDetailsHashMap` added, still without proper password encoding
+  - now - unused
+- class `UserDetailsHashMapEncoded` added, with password encoding
+  - user `jim` password `123`
+  - user `john` password `234`
+- we got rid of `@Bean` annotation in the `UserDetailsHashMap` file because we need only one bin with the type `UserDetailsService`
+- we set annotation `@Bean` on appropriate method in the `UserDetailsHashMapEncoded` class

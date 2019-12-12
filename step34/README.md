@@ -1,4 +1,4 @@
-## Spring Security 33. Configuration class added. Users hardcoded
+## Spring Security 34. Configuration class added. Users moved to separate class without proper encoding
 
 endpoints for testing
 
@@ -19,13 +19,12 @@ endpoints for testing
 ```
 - configuration class `MySecurityConfig` created
 - EVERYTHING is secured
-- users hardcoded
-    - user `jim` password `123`
-    - user `john` password `234`
 
 - no any management
 - http://localhost:8080/login  - login link added by spring security
 - http://localhost:8080/logout - logout link added by spring security
 
-- configuration class added
-- users hardcoded
+- class `UserDetailsHashMap` added
+- users moved to separate class, still without proper password encoding
+    - user `jim` password `123`
+    - user `john` password `234`
