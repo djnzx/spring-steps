@@ -1,4 +1,4 @@
-## Spring Security 32. Only Dependency added
+## Spring Security 33. Configuration class added. Users hardcoded
 
 endpoints for testing
 
@@ -17,11 +17,14 @@ endpoints for testing
     <artifactId>spring-boot-starter-security</artifactId>
 </dependency>
 ```
-- EVERYTHING is secured with user `user` and password like `9ff592b8-6c05-4529-8ef4-6063bcc0b1ba` provided in console log:
-```
-Using generated security password: 9ff592b8-6c05-4529-8ef4-6063bcc0b1ba
-```
+- EVERYTHING is secured with users hardcoded in `MySecurityConfig` class
+    - user `jim` password `123`
+    - user `john` password `234`
+
 - no any management
 - the password is being changed every time after restarting the application
 - http://localhost:8080/login  - login link added by spring security
 - http://localhost:8080/logout - logout link added by spring security
+
+- configuration class added
+- users hardcoded
