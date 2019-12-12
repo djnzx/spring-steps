@@ -1,4 +1,4 @@
-# A step-by-step spring-boot guide
+# A step-by-step spring guide
 
 based on the info taken from the [spring.io/guides](https://spring.io/guides) 
 
