@@ -28,6 +28,7 @@ public class MySecurity extends WebSecurityConfigurerAdapter {
         .and()
         .authorizeRequests()
         .antMatchers("/h2-console/**").permitAll()
+        .antMatchers("/message/**").permitAll()
         .antMatchers("/", "/home", "/about", "/resources/**").permitAll()
         .antMatchers("/admin/**").hasRole("ADMIN")
         .antMatchers("/user/**").hasRole("USER")
