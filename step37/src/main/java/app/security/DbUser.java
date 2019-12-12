@@ -17,6 +17,7 @@ public class DbUser {
   private String password;
   private String roles;
 
+  @Transient
   private final String ROLES_DELIMITER = ":";
 
   public DbUser(String username, String password, String... roles) {

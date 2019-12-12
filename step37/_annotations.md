@@ -6,4 +6,5 @@
 ## New Annotations introduced:
 
 - `@EnableWebSecurity`
-
+- `@Bean`
+- `@Transient`
