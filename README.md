@@ -49,3 +49,7 @@ and modified a bit according to questions being asked during the course
 * @Primary
 * @Bean
 * @Qualifier
+
+### steps 31-39
+
+* spring security from scratch to full (except CORS and CSRF)
