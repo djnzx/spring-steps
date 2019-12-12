@@ -33,18 +33,45 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     // general request rules
     http
         .authorizeRequests()
-        .antMatchers("/resources/**").permitAll()
+        // .hasAuthority(‘ROLE_ADMIN') is similar to hasRole(‘ADMIN')
+        // because the ‘ROLE_‘ prefix gets added automatically.
+        // and we can use authorities in user building
         .antMatchers("/resources/**").permitAll()
         .antMatchers("/guest/**").permitAll()
         .antMatchers("/home/**").authenticated()
+
+        // special option to avoid applying `rememberMe` option
+        .antMatchers("/admin/**").fullyAuthenticated()
         .antMatchers("/admin/**").hasRole("ADMIN")
         .antMatchers("/me/**").hasRole("USER")
         .antMatchers("/news/**").hasAnyRole("ADMIN", "USER")
+
+        // almost any syntax available here. see the documentation
+//        .antMatchers("/news/**").access("hasRole('ADMIN') and hasRole('DBA')")
+
+//        .antMatchers(HttpMethod.GET, "/api").permitAll()
+//        .antMatchers(HttpMethod.POST, "/api").hasAnyAuthority("USER", "ADMIN")
         // there is no way to configure requests after this line
         .anyRequest().authenticated();
 
     // login handling
     http
-        .formLogin().permitAll();
+        .formLogin()
+//        .loginPage("/login7") // you can write your own
+//          .usernameParameter("...")
+//          .passwordParameter("...")
+//          .successForwardUrl("...")
+//          .failureForwardUrl("...")
+//          .failureHandler(null)
+        .permitAll();
+
+    // logout handling
+//    http
+//        .logout()
+//        .invalidateHttpSession(true)
+//        .clearAuthentication(true)
+//        .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
+////        .logoutSuccessUrl("/logout-success")
+//        .permitAll();
   }
 }
