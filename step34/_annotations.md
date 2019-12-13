@@ -2,8 +2,5 @@
 
 - `@SpringBootApplication`
 - `@Configuration`
-
-## New Annotations introduced:
-
 - `@EnableWebSecurity`
 - `@Bean`

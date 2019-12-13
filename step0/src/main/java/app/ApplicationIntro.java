@@ -2,18 +2,19 @@ package app;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Arrays;
 import java.util.List;
 
 /**
- * http://localhost:9000/users
+ * http://localhost:8080/person
  */
-@RestController
+@Controller
 @SpringBootApplication
-public class Application {
+public class ApplicationIntro {
 
   static class Person {
     private String name;
@@ -26,11 +27,12 @@ public class Application {
   }
 
   public static void main(String[] args) {
-    SpringApplication.run(Application.class);
+    SpringApplication.run(ApplicationIntro.class);
   }
 
-  @GetMapping("/users")
-  public List<Person> btdf () {
+  @ResponseBody
+  @RequestMapping("/person")
+  public List<Person> handle () {
     return Arrays.asList(
         new Person("Jim"),
         new Person("John"));

@@ -15,41 +15,4 @@ and modified a bit according to questions being asked during the course
 
 ## Content:
 
-### step0
-
-- minimal application in one file
-
-### step01
-
-- minimal application separated by folders
-
-#### component marking:
-* @Component
-* @Controller
-* @Service
-* @ResponseBody
-* @RestController
-* @Autowired
-
-#### request binding:
-* @RequestMapping
-* @PostMapping
-* @PutMapping
-* @PatchMapping
-* @GetMapping
-
-#### params binding:
-* @PathVariable - "/users/add1/{name}"
-* @RequestParam - "/users/add2?name=Johny"
-
-### step02
-
-* the same as step01 +
-* resolving different implementation for one interface as a dependency
-* @Primary
-* @Bean
-* @Qualifier
-
-### steps 31-39
-
-* spring security from scratch to full (except CORS and CSRF)
+- please see corresponding `readme.md` files in appropriate sub-folders

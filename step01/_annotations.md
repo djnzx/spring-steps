@@ -1,4 +1,3 @@
 ## Annotations used:
 
-- `@SpringBootApplication`
 - `@Configuration`

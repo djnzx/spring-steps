@@ -2,5 +2,3 @@
 
 - `@SpringBootApplication`
 - `@Configuration`
-
-## New Annotations introduced:

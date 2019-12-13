@@ -1,6 +1,0 @@
-https://githowto.com/ru/merging_back_to_master
-
-git pull --allow-unrelated-histories origin master
-
-git checkout master
-git merge style
