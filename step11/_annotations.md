@@ -1,3 +1,6 @@
+## Annotations used:
+
+- 
 - entity / service / controller
   - @Component
   - @Controller

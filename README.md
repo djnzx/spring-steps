@@ -19,6 +19,7 @@ and modified a bit according to questions being asked during the course
 - step0 - intro to spring
 - step01 - request mapping
 - step02 - thymeleaf template engine
+- step03 - parameters binding (request param, request body, path fragment)
 
 ...
 
