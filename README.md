@@ -23,6 +23,10 @@ and modified a bit according to questions being asked during the course
 
 ...
 
+- step13 - spring. http session
+
+...
+
 - step15 - spring MVC + spring data. basic example
 
 ...
