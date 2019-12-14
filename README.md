@@ -49,3 +49,5 @@ and modified a bit according to questions being asked during the course
 - step38 - spring security. authorization configuration
 - step39 - spring security. extra configuration examples
  
+official repositories to book **Spring in Action 5**
+can be taken [here](https://github.com/habuma/spring-in-action-5-samples.git) 
