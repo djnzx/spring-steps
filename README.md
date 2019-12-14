@@ -16,3 +16,19 @@ and modified a bit according to questions being asked during the course
 ## Content:
 
 - please see corresponding `readme.md` files in appropriate sub-folders
+- step0 - intro to spring
+- step01 - request mapping
+- step02 - thymeleaf template engine
+
+...
+
+- step31 - spring security. intro 
+- step32 - spring security. dependency
+- step33 - spring security. users hardcoded
+- step34 - spring security. users in the class
+- step35 - spring security. users in the class. password encoded
+- step36 - spring security. users in the database
+- step37 - spring security. users in the database without fetching all
+- step38 - spring security. authorization configuration
+- step39 - spring security. extra configuration examples
+ 
