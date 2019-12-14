@@ -12,8 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * http://localhost:8080/news
  */
 @SpringBootApplication
-public class SpringStep02Mapping {
+public class SpringStep01Mapping {
   public static void main(String[] args) {
-    SpringApplication.run(SpringStep02Mapping.class, args);
+    SpringApplication.run(SpringStep01Mapping.class, args);
   }
 }

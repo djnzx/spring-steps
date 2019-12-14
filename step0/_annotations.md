@@ -1,6 +1,6 @@
 ## Annotations used:
 
-- `@Controller`
 - `@SpringBootApplication`
-- `@ResponseBody`
+- `@Controller`
 - `@RequestMapping`
+- `@ResponseBody`
