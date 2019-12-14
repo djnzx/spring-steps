@@ -19,6 +19,7 @@ public class ConverterStringToIngredient implements Converter<String, Ingredient
 
   @Override
   public Ingredient convert(String id) {
+    // debug approach
 //    if (true) throw new IllegalArgumentException("experiments :)");
 	  return repo.findById(id).orElse(null);
   }
