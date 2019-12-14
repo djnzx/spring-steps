@@ -10,3 +10,6 @@
 - `spring.h2.console.path=/h2-console`
 - `spring.h2.console.settings.trace=false`
 - `spring.h2.console.settings.web-allow-others=false`
+
+p.s. these are default values.
+all of them can be omitted

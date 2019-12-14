@@ -31,6 +31,10 @@ public class PersonService {
     return p;
   }
 
+  public void del_one(long id) {
+    personRepository.deleteById(id);
+  }
+
   public List<Person> create_initial() {
     List<Person> ps = Stream.of(
         "Jim",
@@ -40,4 +44,5 @@ public class PersonService {
     personRepository.saveAll(ps);
     return ps;
   }
+
 }

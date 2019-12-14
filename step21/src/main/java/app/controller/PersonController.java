@@ -18,20 +18,23 @@ public class PersonController {
   }
 
   @GetMapping
-  public Iterable<Person> response_get_all() {
+  public Iterable<Person> handle_get_all() {
     return personService.get_all();
   }
 
   @GetMapping("/{id}")
-  public Optional<Person> response_get(@PathVariable("id") long id) {
+  public Optional<Person> handle_get(@PathVariable("id") long id) {
     return personService.get_one(id);
   }
 
-  @PostMapping
-  public Person response_post(@RequestBody Person p) {
-    System.out.println(p);
-    personService.create_one(p);
-    return p;
+  @DeleteMapping("/{id}")
+  public void handle_delete_one(@PathVariable("id") long id) {
+    personService.del_one(id);
+  }
+
+  @PutMapping
+  public Person handle_post(@RequestBody Person p) {
+    return personService.create_one(p);
   }
 
   @PostMapping("/cr")
