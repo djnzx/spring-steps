@@ -23,6 +23,10 @@ and modified a bit according to questions being asked during the course
 
 ...
 
+- step21 - spring data. basics
+
+...
+
 - step31 - spring security. intro 
 - step32 - spring security. dependency
 - step33 - spring security. users hardcoded

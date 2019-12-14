@@ -1,23 +1,18 @@
 package app.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 @Data
-@RequiredArgsConstructor
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force=true)
 @Entity
-@Table(name = "person")
+@Table(name = "persson")
 public class Person {
 
   @Id
@@ -32,9 +27,16 @@ public class Person {
   private final String extra;
 
   private Date createdAt;
+
   @PrePersist
   void createdAt() {
     this.createdAt = new Date();
+  }
+
+  public Person(String name) {
+    this.id = 0;
+    this.name = name;
+    this.extra = "";
   }
 
   /**
@@ -48,10 +50,4 @@ public class Person {
    * 2.2. If you want to stop these nested subquery - put fetch = FetchType.LAZY
    *      in that case SQL will be performed only after corresponding access to field.
    */
-//  @JsonIgnore
-  @ManyToMany(targetEntity = Responsibility.class)
-  private List<Responsibility> responsibilities = new ArrayList<>();
-
-////  @Size(min=1, message="You must have at least 1 responsibility")
-
 }
