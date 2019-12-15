@@ -18,27 +18,27 @@ public class ApiController {
 
   @GetMapping("/guest")
   public ApiMessageRs handle_guest() {
-    return new ApiMessageRs("any unregistered");
+    return new ApiMessageRs("OK:any unregistered");
   }
 
   @GetMapping("/home")
   public ApiMessageRs handle_home() {
-    return new ApiMessageRs("any authenticated");
+    return new ApiMessageRs("OK:any authenticated");
   }
 
   @GetMapping("/admin")
   public ApiMessageRs handle_admin() {
-    return new ApiMessageRs("any authorized with ADMIN role");
+    return new ApiMessageRs("OK:any authorized with ADMIN role");
   }
 
   @GetMapping("/me")
   public ApiMessageRs handle_user() {
-    return new ApiMessageRs("any authorized with USER role");
+    return new ApiMessageRs("OK:any authorized with USER role");
   }
 
   @GetMapping("/news")
   public ApiMessageRs handle_news() {
-    return new ApiMessageRs("any authorized with any USER or ADMIN role");
+    return new ApiMessageRs("OK:any authorized with any USER or ADMIN role");
   }
 
 }

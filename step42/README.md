@@ -2,7 +2,10 @@
 
 this is full copy op `step41` plus
 
-- dependencies
-- token storage
+- `jjwt` dependency
 - register implementation
+- extra spring security configuration (exception handling)
+- `UserDetailsService.loadById()`
 - login implementation
+- filter
+- and everything

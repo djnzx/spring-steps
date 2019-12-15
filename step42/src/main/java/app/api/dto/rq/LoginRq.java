@@ -9,4 +9,5 @@ import lombok.NoArgsConstructor;
 public class LoginRq {
   private String username;
   private String password;
+  private boolean remember;
 }

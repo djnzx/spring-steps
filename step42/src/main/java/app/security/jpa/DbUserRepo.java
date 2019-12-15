@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface DbUserRepo extends CrudRepository<DbUser, Integer> {
+public interface DbUserRepo extends CrudRepository<DbUser, Long> {
   Optional<DbUser> findByUsername(String username);
 }

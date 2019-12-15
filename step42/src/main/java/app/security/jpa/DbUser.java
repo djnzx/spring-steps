@@ -12,7 +12,7 @@ import javax.persistence.*;
 public class DbUser {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  private int id;
+  private long id;
   private String username;
   private String password;
   private String roles;

@@ -4,7 +4,6 @@ import app.security.jpa.DbUser;
 import app.security.jpa.DbUserRepo;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -20,11 +19,12 @@ public class UserDetailsServiceJPA implements UserDetailsService {
   }
 
   public static UserDetails mapper(DbUser dbUser) {
-    return User
-        .withUsername(dbUser.getUsername())
-        .password(dbUser.getPassword())
-        .roles(dbUser.getRoles())
-        .build();
+    return new MyUserDetails(
+        dbUser.getId(),
+        dbUser.getUsername(),
+        dbUser.getPassword(),
+        dbUser.getRoles()
+    );
   }
 
   /**
@@ -44,12 +44,12 @@ public class UserDetailsServiceJPA implements UserDetailsService {
    * we will use this method in JWT authorization part
    * @throws UsernameNotFoundException
    */
-  public UserDetails loadUserById(int userid) throws UsernameNotFoundException {
+  public UserDetails loadUserById(long userid) throws UsernameNotFoundException {
     log.info(String.format(">>>>>>> UserDetails.loadUserById:%d", userid));
     return dbUserRepo.findById(userid)
         .map(UserDetailsServiceJPA::mapper)
         .orElseThrow(() -> new UsernameNotFoundException(
             String.format("User with id:%d` not found", userid)));
-
   }
+
 }

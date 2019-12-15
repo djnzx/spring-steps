@@ -27,13 +27,15 @@ public class AuthController {
   @PostMapping("/login")
   public LoginRs handle_login(@RequestBody LoginRq rq) {
     log.info(rq);
-    return new LoginRs("POST:/login:not implemented", "XXXYYYZZZ");
+    return authService.login(rq.getUsername(), rq.getPassword(), rq.isRemember())
+        .map(t -> new LoginRs("OK", t))
+        .orElse(new LoginRs("ERR", null));
   }
 
   @PostMapping("/logout")
   public LogoutRs handle_logout(@RequestBody LogoutRq rq) {
     log.info(rq);
-    return new LogoutRs("POST:/logout:not implemented");
+    return new LogoutRs("POST:/logout:couldn't be implemented by using this approach");
   }
 
   @PostMapping("/register")
@@ -42,4 +44,5 @@ public class AuthController {
     boolean result = authService.register_new(rq.getUsername(), rq.getPassword());
     return result ? RegisterRs.Ok() : RegisterRs.AlreadyExists();
   }
+
 }

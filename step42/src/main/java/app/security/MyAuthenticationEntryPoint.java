@@ -17,9 +17,11 @@ public class MyAuthenticationEntryPoint implements AuthenticationEntryPoint {
   public void commence(HttpServletRequest httpServletRequest,
                        HttpServletResponse httpServletResponse,
                        AuthenticationException e) throws IOException, ServletException {
+
     log.error("Responding with unauthorized error. Message - {}", e.getMessage());
+
     httpServletResponse.sendError(HttpServletResponse.SC_UNAUTHORIZED,
-        "Sorry, You're not authorized to access this resource.");
+        "You're not authorized to access this resource.");
 
   }
 }
