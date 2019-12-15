@@ -1,7 +1,7 @@
 package app.jdbc;
 
-import app.dto.Order;
-import app.dto.Taco;
+import app.api.dto.Order;
+import app.api.dto.Taco;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;

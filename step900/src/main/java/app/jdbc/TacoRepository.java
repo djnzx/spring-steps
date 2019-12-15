@@ -1,6 +1,6 @@
 package app.jdbc;
 
-import app.dto.Taco;
+import app.api.dto.Taco;
 
 public interface TacoRepository  {
   Taco save(Taco design);

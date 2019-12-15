@@ -1,4 +1,4 @@
-package app.dto;
+package app.api.dto;
 
 import app.data.Ingredient;
 import lombok.Data;
