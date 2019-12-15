@@ -6,13 +6,19 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.AuthenticationEntryPoint;
 
 @Log4j2
 @Configuration
 @EnableWebSecurity
 public class MyAppSecurityConfig extends WebSecurityConfigurerAdapter {
 
-  public MyAppSecurityConfig(DbUsersInitial initial) {
+  private final AuthenticationEntryPoint authEntryPoint;
+
+  public MyAppSecurityConfig(
+      DbUsersInitial initial,
+      AuthenticationEntryPoint myAuthenticationEntryPoint) {
+    this.authEntryPoint = myAuthenticationEntryPoint;
     log.info(":::: >> Populating initial users into Database...... >> ::::");
     // actually that code must be presented
     // in the user registration service
@@ -29,6 +35,9 @@ public class MyAppSecurityConfig extends WebSecurityConfigurerAdapter {
     http.csrf().disable();
     http.headers().frameOptions().disable();
     http.authorizeRequests().antMatchers("/h2-console/**").permitAll();
+
+    // proper logging
+    http.exceptionHandling().authenticationEntryPoint(authEntryPoint);
 
     // general request rules
     http

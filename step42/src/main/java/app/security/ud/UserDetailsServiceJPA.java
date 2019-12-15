@@ -34,7 +34,8 @@ public class UserDetailsServiceJPA implements UserDetailsService {
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     log.info(String.format(">>>>>>> UserDetails.loadUserByUsername:%s", username));
-    return dbUserRepo.findByUsername(username).map(UserDetailsServiceJPA::mapper)
+    return dbUserRepo.findByUsername(username)
+        .map(UserDetailsServiceJPA::mapper)
         .orElseThrow(() -> new UsernameNotFoundException(
             String.format("User `%s` not found", username)));
   }
@@ -45,7 +46,8 @@ public class UserDetailsServiceJPA implements UserDetailsService {
    */
   public UserDetails loadUserById(int userid) throws UsernameNotFoundException {
     log.info(String.format(">>>>>>> UserDetails.loadUserById:%d", userid));
-    return dbUserRepo.findById(userid).map(UserDetailsServiceJPA::mapper)
+    return dbUserRepo.findById(userid)
+        .map(UserDetailsServiceJPA::mapper)
         .orElseThrow(() -> new UsernameNotFoundException(
             String.format("User with id:%d` not found", userid)));
 
