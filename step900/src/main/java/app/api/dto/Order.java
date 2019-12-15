@@ -1,4 +1,4 @@
-package app.dto;
+package app.api.dto;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;

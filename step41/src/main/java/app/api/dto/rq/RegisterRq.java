@@ -1,4 +1,4 @@
-package app.dto.rq;
+package app.api.dto.rq;
 
 import lombok.AccessLevel;
 import lombok.Data;

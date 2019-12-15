@@ -1,7 +1,7 @@
 package app.jdbc;
 
 import app.data.Ingredient;
-import app.dto.Taco;
+import app.api.dto.Taco;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
 import org.springframework.jdbc.core.PreparedStatementCreatorFactory;

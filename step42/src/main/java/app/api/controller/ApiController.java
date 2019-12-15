@@ -1,4 +1,4 @@
-package app.api;
+package app.api.controller;
 
 import app.api.dto.rs.ApiMessageRs;
 import org.springframework.web.bind.annotation.GetMapping;

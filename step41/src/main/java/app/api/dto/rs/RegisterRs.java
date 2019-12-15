@@ -1,11 +1,10 @@
-package app.dto.rs;
+package app.api.dto.rs;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public class LoginRs {
+public class RegisterRs {
   private String message;
-  private String token;
 }

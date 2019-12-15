@@ -2,8 +2,8 @@ package app.controller;
 
 import app.data.Ingredient;
 import app.data.Ingredient.Type;
-import app.dto.Order;
-import app.dto.Taco;
+import app.api.dto.Order;
+import app.api.dto.Taco;
 import app.jdbc.IngredientRepository;
 import app.jdbc.TacoRepository;
 import lombok.extern.slf4j.Slf4j;

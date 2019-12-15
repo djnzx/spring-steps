@@ -1,4 +1,4 @@
-package app.dto.rs;
+package app.api.dto.rs;
 
 import lombok.*;
 
