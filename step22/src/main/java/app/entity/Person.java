@@ -5,41 +5,39 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
-import java.util.Date;
 
 @Data
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force=true)
 @Entity
+@Table(name = "person")
 public class Person {
 
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
+  @Column(name = "id")
   private final long id;
 
-  @NotNull
-  @Size(min=3, message="Name must be at least 3 characters long")
+  @Column(name = "name")
   private final String name;
 
-  @Column(name = "exxtra")
-  private final String extra;
+
+  // ========== Foreign Key approach (we well have extra field to reference om target table.PK)
+  // that exactly means, that column `extra_id` will be created for join purposes
+  // and Extra1 will be joined by its `id` field
+  @OneToOne(cascade = CascadeType.ALL)
+  @JoinColumn(name = "extra1_id", referencedColumnName = "id")
+  private Extra1 extra1;
+
+  // ========== Shared Primary Key (we will use our PK as target table.PK)
+  // we dont provide the @JoinColumn because
+  // Person.PK will be stored in the target table
+  @OneToOne(mappedBy = "person", cascade = CascadeType.ALL)
+  private Extra2 extra2;
+
+
 
   public Person(String name) {
     this.id = 0;
     this.name = name;
-    this.extra = null;
   }
-
-  /**
-   * these annotations @ManyToMany() or @OneToMany
-   * 1.   IMMEDIATELY creates RELATIONS table
-   *      PERSON_RESPONSIBILITIES (PERSON_ID, RESPONSIBILITY_ID)
-   *
-   * 2.   GIVES ABILITY TO USE JOIN "OUT OF THE BOX"
-   *      all queries automatically appended with "inner join on child table"
-   * 2.1. In you want to stop these nested serialization, just put @JsonIgnore
-   * 2.2. If you want to stop these nested subquery - put fetch = FetchType.LAZY
-   *      in that case SQL will be performed only after corresponding access to field.
-   */
 }
