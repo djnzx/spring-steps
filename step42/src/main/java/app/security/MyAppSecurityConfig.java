@@ -6,7 +6,6 @@ import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
-import org.springframework.security.config.BeanIds;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -74,6 +73,10 @@ public class MyAppSecurityConfig extends WebSecurityConfigurerAdapter {
 //    http.formLogin().permitAll();
   }
 
+  /**
+   * we need that only because we inject AuthenticationManager
+   * in the AuthService
+   */
   @Bean
   public AuthenticationManager myAuthenticationManager() throws Exception {
     return super.authenticationManagerBean();
