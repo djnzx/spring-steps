@@ -10,7 +10,6 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.http.SessionCreationPolicy;
-import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Log4j2
@@ -18,19 +17,14 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 @EnableWebSecurity
 public class MyAppSecurityConfig extends WebSecurityConfigurerAdapter {
 
-  private final AuthenticationEntryPoint authEntryPoint;
   private final JwtAuthenticationFilter jwtFilter;
 
-  public MyAppSecurityConfig(
-      DbUsersInitial initial,
-      AuthenticationEntryPoint myAuthenticationEntryPoint,
-      JwtAuthenticationFilter jwtFilter) {
-    this.authEntryPoint = myAuthenticationEntryPoint;
+  public MyAppSecurityConfig(DbUsersInitial initial, JwtAuthenticationFilter jwtFilter) {
     this.jwtFilter = jwtFilter;
-    log.info(":::: >> Populating initial users into Database...... >> ::::");
     // actually that code must be presented
     // in the user registration service
     // we put it here only because we use H2 in-memory database
+    log.info(":::: >> Populating initial users into Database...... >> ::::");
     initial.populate();
     log.info(":::: >> Populating initial users into Database. ...done >> ::::");
   }
@@ -43,10 +37,6 @@ public class MyAppSecurityConfig extends WebSecurityConfigurerAdapter {
     http.csrf().disable();
     http.headers().frameOptions().disable();
     http.authorizeRequests().antMatchers("/h2-console/**").permitAll();
-
-    // proper exception handling/logging
-    // this staff brakes standard user logging procedure !!!
-//    http.exceptionHandling().authenticationEntryPoint(authEntryPoint);
 
     // switch off JSESSION cookie
     // this staff brakes standard user logging procedure !!!
@@ -66,8 +56,7 @@ public class MyAppSecurityConfig extends WebSecurityConfigurerAdapter {
         .anyRequest().authenticated();
 
     // add our filter
-    http
-        .addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
+    http.addFilterBefore(jwtFilter, UsernamePasswordAuthenticationFilter.class);
 
     // login handling
 //    http.formLogin().permitAll();
