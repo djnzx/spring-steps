@@ -36,10 +36,11 @@ and modified a bit according to questions being asked during the course
 ...
 
 - step21 - spring data. basics
-- step22 - spring data. relations 1:1 via field 
-- step23 - spring data. relations 1:1 via separate table 
-- step24 - spring data. relations 1:N via field 
-- step25 - spring data. relations 1:N via separate table 
+- step22 - spring data. relations 1:N via separate table 
+
+- step23 - spring data. relations 1:1 via field 
+- step24 - spring data. relations 1:1 via separate table 
+- step25 - spring data. relations 1:N via field 
 - step26 - spring data. relations M:N via separate table 
 
 ...
