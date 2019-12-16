@@ -51,8 +51,7 @@ public class JwtTokenService {
 
   public Optional<Jws<Claims>> tokenToClaim(String token) {
     try {
-      return Optional.of(
-          Jwts.parser()
+      return Optional.of(Jwts.parser()
               .setSigningKey(jwtSecret)
               .parseClaimsJws(token));
     } catch (SignatureException ex) {
