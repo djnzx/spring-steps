@@ -36,6 +36,11 @@ and modified a bit according to questions being asked during the course
 ...
 
 - step21 - spring data. basics
+- step22 - spring data. relations 1:1 via field 
+- step23 - spring data. relations 1:1 via separate table 
+- step24 - spring data. relations 1:N via field 
+- step25 - spring data. relations 1:N via separate table 
+- step26 - spring data. relations M:N via separate table 
 
 ...
 
@@ -48,6 +53,9 @@ and modified a bit according to questions being asked during the course
 - step37 - spring security. users in the database without fetching all
 - step38 - spring security. authorization configuration
 - step39 - spring security. extra configuration examples
+
+- step41 - spring security. Secure your API. basic idea
+- step42 - spring security. Secure your API. Stateless implementation base on JWT-token
  
 official repositories to book **Spring in Action 5**
 can be taken [here](https://github.com/habuma/spring-in-action-5-samples.git) 
