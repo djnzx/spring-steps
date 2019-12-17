@@ -44,8 +44,9 @@ and modified a bit according to questions being asked during the course
 - step22a - implementation via `FK` 
 - step22b - implementation via `shared PK`
 - step22c - implementation via `3rd table` 
-- step22 - spring data. relations. 1:N (**1** `Person entity` has a relation with **1** `Extra entity`)
-- step23a - spring data. 1:N relations via `3rd table`
+- step23 - spring data. relations. 1:N (**1** `Person entity` has a relation with **N** `Extra entity`)
+- step22a - implementation via `FK` 
+- step23b - implementation via `3rd table`
 
 ...
 
