@@ -61,6 +61,7 @@ and modified a bit according to questions being asked during the course
 - step39 - spring security. extra configuration examples
 - step41 - spring security. Secure your API. basic idea
 - step42 - spring security. Secure your API. Stateless implementation base on JWT-token
+- step43 - spring security. Secure your API. get rid of MVC part + static resources mappings
 
 official repositories to book **Spring in Action 5**
 can be taken [here](https://github.com/habuma/spring-in-action-5-samples.git) 
