@@ -10,18 +10,18 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Data
-@Table(name = "book")
-public class Book {
+@Table(name = "xtra3")
+public class Extra3 {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "b_id")
+  @Column(name = "x_id")
   private long id;
 
-  @Column(name = "b_name")
+  @Column(name = "x_name")
   private String name;
 
   // field name from another table
-  @OneToOne(mappedBy = "book")
-  private Author author;
+  @OneToOne(mappedBy = "extra")
+  private Person person;
 
 }

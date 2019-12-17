@@ -10,22 +10,22 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Data
-@Table(name = "author")
-public class Author {
+@Table(name = "person")
+public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "a_id")
+  @Column(name = "p_id")
   private long id;
 
-  @Column(name = "a_name")
+  @Column(name = "p_name")
   private String name;
 
   @OneToOne(cascade = CascadeType.ALL)
-  @JoinTable(name = "r_author_book",
+  @JoinTable(name = "r_person_extra",
       joinColumns =
-          { @JoinColumn(name = "author_id", referencedColumnName = "a_id") },
+          { @JoinColumn(name = "person_id", referencedColumnName = "p_id") },
       inverseJoinColumns =
-          { @JoinColumn(name = "book_id", referencedColumnName = "b_id") })
-  private Book book;
+          { @JoinColumn(name = "extra_id", referencedColumnName = "x_id") })
+  private Extra3 extra;
 
 }

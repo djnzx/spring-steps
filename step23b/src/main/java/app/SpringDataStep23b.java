@@ -7,8 +7,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * http://localhost:8080/h2-console
  */
 @SpringBootApplication
-public class SpringDataStep22c {
+public class SpringDataStep23b {
   public static void main(String[] args) {
-    SpringApplication.run(SpringDataStep22c.class);
+    SpringApplication.run(SpringDataStep23b.class);
   }
 }
