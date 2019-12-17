@@ -14,25 +14,27 @@ import javax.persistence.*;
 public class Phone {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "id")
+  @Column(name = "ph_id")
   private long id;
 
-  @Column(name = "name")
+  @Column(name = "ph_name")
   private String name;
 
   /**
    * that's not a column
    * that's a field to keep a relation on Java LEVEL
    *
-   * all the details
-   * how to keep that relation on the Database LEVEL
-   * will be taken from `mirror` entity
-   *
-   * the column `person_id` will be added to the `main entity` (Person) table
-   * to handle that relation on Database LEVEL
+   * according to `@JoinTablename = "r_person_phone",...`
+   * 3rd table will be created
+   * to keep that relation on the Database LEVEL
    */
   @ManyToOne
-  @JoinColumn(name="person_id", nullable=false)
+  @JoinTable(name = "r_person_phone",
+      joinColumns =
+          { @JoinColumn(name = "phone_id", referencedColumnName = "ph_id") },
+      inverseJoinColumns =
+          { @JoinColumn(name = "person_id", referencedColumnName = "p_id") }
+  )
   private Person person;
 
 }

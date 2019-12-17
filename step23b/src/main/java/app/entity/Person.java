@@ -15,10 +15,10 @@ import java.util.Set;
 public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
-  @Column(name = "id")
+  @Column(name = "p_id")
   private long id;
 
-  @Column(name = "name")
+  @Column(name = "p_name")
   private String name;
 
   /**
