@@ -27,6 +27,10 @@ and modified a bit according to questions being asked during the course
 
 ...
 
+- step10 - Heroku deployment (actually separate project )
+
+...
+
 - step13 - spring. http session
 
 ...
@@ -36,9 +40,12 @@ and modified a bit according to questions being asked during the course
 ...
 
 - step21 - spring data. basics
-- step22a - spring data. 1:1 relations via `FK` 
-- step22b - spring data. 1:1 relations via `shared PK` 
-- step22c - spring data. 1:1 relations via `3rd table` 
+- step22 - spring data. relations. 1:1 (**1** `Person entity` has a relation with **1** `Extra entity`)
+- step22a - implementation via `FK` 
+- step22b - implementation via `shared PK`
+- step22c - implementation via `3rd table` 
+- step22 - spring data. relations. 1:N (**1** `Person entity` has a relation with **1** `Extra entity`)
+- step23a - spring data. 1:N relations via `3rd table`
 
 ...
 
@@ -51,7 +58,6 @@ and modified a bit according to questions being asked during the course
 - step37 - spring security. users in the database without fetching all
 - step38 - spring security. authorization configuration
 - step39 - spring security. extra configuration examples
-
 - step41 - spring security. Secure your API. basic idea
 - step42 - spring security. Secure your API. Stateless implementation base on JWT-token
 
