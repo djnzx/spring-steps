@@ -22,28 +22,28 @@ public class DbController {
 
   // Phone WITHOUT nested Persons
   @GetMapping("/ph/{id}")
-  @JsonView(Views.Basic.class)
+  @JsonView(Views.NoNested.class)
   public Phone handle_phone1(@PathVariable long id) {
     return phoneService.fetch(id);
   }
 
   // Person WITHOUT nested phones
   @GetMapping("/p/{id}")
-  @JsonView(Views.Basic.class)
+  @JsonView(Views.NoNested.class)
   public Person handle_person1(@PathVariable long id) {
     return personService.fetch(id);
   }
 
   // Phone WITH nested Persons
   @GetMapping("/phn/{id}")
-  @JsonView(Views.WithNested.class)
+  @JsonView(Views.AllowPhoneToPerson.class)
   public Phone handle_phone2(@PathVariable long id) {
     return phoneService.fetch(id);
   }
 
   // Person WITH nested phones
   @GetMapping("/pn/{id}")
-  @JsonView(Views.WithNested.class)
+  @JsonView(Views.AllowPersonToPhone.class)
   public Person handle_person2(@PathVariable long id) {
     return personService.fetch(id);
   }

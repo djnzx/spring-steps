@@ -1,11 +1,8 @@
 package app.entity;
 
 import app.controller.Views;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fasterxml.jackson.annotation.JsonView;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.*;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -23,11 +20,11 @@ public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "p_id")
-  @JsonView(Views.Basic.class)
+  @JsonView(Views.NoNested.class)
   private long id;
 
   @Column(name = "p_name")
-  @JsonView(Views.Basic.class)
+  @JsonView(Views.NoNested.class)
   private String name;
 
   /**
@@ -39,7 +36,6 @@ public class Person {
    * `persons` is a field name on the `related entity` (Phone)
    *
    */
-  @JsonManagedReference
   @ManyToMany(
       cascade = { CascadeType.PERSIST, CascadeType.MERGE },
 //      fetch = FetchType.EAGER
@@ -49,7 +45,7 @@ public class Person {
       ,joinColumns =        { @JoinColumn(name = "person_id", referencedColumnName = "p_id") }
       ,inverseJoinColumns = { @JoinColumn(name = "phone_id", referencedColumnName = "ph_id") }
   )
-  @JsonView(Views.WithNested.class)
+  @JsonView(Views.AllowPersonToPhone.class)
   private Collection<Phone> phones = new HashSet<>();
 
   public void addNewPhone(Phone phone) {

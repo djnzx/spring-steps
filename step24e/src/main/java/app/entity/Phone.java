@@ -1,11 +1,8 @@
 package app.entity;
 
 import app.controller.Views;
-import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonView;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import com.fasterxml.jackson.annotation.*;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.Collection;
@@ -20,11 +17,11 @@ public class Phone {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   @Column(name = "ph_id")
-  @JsonView(Views.Basic.class)
+  @JsonView(Views.NoNested.class)
   private long id;
 
   @Column(name = "ph_number")
-  @JsonView(Views.Basic.class)
+  @JsonView(Views.NoNested.class)
   private String number;
 
   /**
@@ -35,13 +32,12 @@ public class Phone {
    * 3rd table will be created
    * to keep that relation on the Database LEVEL
    */
-  @JsonBackReference
   @ManyToMany(
       cascade = { CascadeType.PERSIST, CascadeType.MERGE },
 //      fetch = FetchType.EAGER,
       fetch = FetchType.LAZY,
       mappedBy="phones")
-  @JsonView(Views.WithNested.class)
+  @JsonView(Views.AllowPhoneToPerson.class)
   private Collection<Person> persons = new HashSet<>();
 
   public Phone(String number) {
