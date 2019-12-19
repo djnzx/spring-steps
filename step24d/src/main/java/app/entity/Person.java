@@ -9,6 +9,8 @@ import javax.persistence.*;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.function.Predicate;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -51,5 +53,10 @@ public class Person {
 
   public Person(String name) {
     this.name = name;
+  }
+
+  public Person(String name, Iterable<Phone> phones) {
+    this.name = name;
+    this.phones = StreamSupport.stream(phones.spliterator(), false).collect(Collectors.toSet());
   }
 }

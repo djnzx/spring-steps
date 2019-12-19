@@ -220,5 +220,26 @@ public class AutoRun {
       }
     };
   }
+
+  @Bean
+  @Order(7)
+  public CommandLineRunner inserting_many_to_many() {
+    return new CommandLineRunner() {
+      @Transactional
+      @Override
+      public void run(String... args) throws Exception {
+        // persist related
+        Iterable<Phone> phones =
+            phoneRepo.saveAll(Arrays.asList(new Phone("P1"), new Phone("P2"))); // 24, 25
+        // create entities
+        Person p1 = new Person("Dinosaur", phones);   // 26
+        Person p2 = new Person("Brontozaur", phones); // 27
+        // persist main
+        personRepo.saveAll(Arrays.asList(p1, p2));
+
+        log.info(":7: TWO:TWO have been added");
+      }
+    };
+  }
 // http://localhost:8080/h2-console
 }
