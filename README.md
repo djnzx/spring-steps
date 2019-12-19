@@ -48,6 +48,7 @@ Initially based on the students' questions during conducting Java BootCamp in [I
 - step24 :: spring data. relations. M:N (**M** `Person` entities have a relations with **N** `Extra` entities)
 implementation via `3rd table`
 - step24d :: spring data. relations. M:N. working with data. (insertion data/relation, deletion data/relations)
+- step24d :: spring data. relations. M:N. working with data. (data selection)
 
 ...
 
