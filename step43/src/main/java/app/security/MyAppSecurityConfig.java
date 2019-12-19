@@ -6,6 +6,7 @@ import app.security.jwt.JwtAuthenticationFilter;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -69,7 +70,12 @@ public class MyAppSecurityConfig extends WebSecurityConfigurerAdapter {
         .authorizeRequests()
         .antMatchers(resources_permit_all()).permitAll()
         .antMatchers("/api/home/**").authenticated()
+        // coarse-grain approach
         .antMatchers("/api/admin/**").hasRole("ADMIN")
+        // alternate fine-grain approach
+//        .antMatchers(HttpMethod.GET, "/api/admin/**").permitAll()
+//        .antMatchers(HttpMethod.PUT, "/api/admin/**").hasRole("USER")
+//        .antMatchers(HttpMethod.PATCH, "/api/admin/**").hasRole("ADMIN")
         .antMatchers("/api/me/**").hasRole("USER")
         .antMatchers("/api/news/**").hasAnyRole("ADMIN", "USER")
         // there is no way to configure requests after this line
