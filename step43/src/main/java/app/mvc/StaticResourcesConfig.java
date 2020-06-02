@@ -23,6 +23,7 @@ public class StaticResourcesConfig implements WebMvcConfigurer {
     if (MAP.length != LOC.length) throw new IllegalArgumentException(
         "StaticResourcesConfig: arrays MAP and LOC must have the same size");
     IntStream.range(0, MAP.length)
-        .forEach(idx -> reg.addResourceHandler(MAP[idx]).addResourceLocations(LOC[idx]));
+        .forEach(idx -> reg.addResourceHandler(MAP[idx])
+            .addResourceLocations(LOC[idx]));
   }
 }

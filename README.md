@@ -22,7 +22,7 @@ Initially based on the students' questions during conducting Java BootCamp in [I
 ...
 
 - step05 :: application structure, dependency injection 3 different ways
-
+- step06 :: consuming POST: params/JSON body/Http Forms/File Uploading
 ...
 
 - step10 :: Heroku deployment (actually separate project )
