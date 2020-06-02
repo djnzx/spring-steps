@@ -1,0 +1,1 @@
+This contents is taken from the file `file_x.txt` from `resources` folder!
