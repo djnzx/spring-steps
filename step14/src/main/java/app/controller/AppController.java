@@ -26,7 +26,7 @@ public class AppController {
 
   @ModelAttribute(CustomerDetails.ATTR_NAME)
   public CustomerDetails create(HttpSession session) {
-    System.out.println("NULL. creating");
+    log.info(fmt("Creating new object CustomerDetails for session %s", session.getId()));
     return new CustomerDetails(session.getId());
   }
 
