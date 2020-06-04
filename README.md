@@ -31,11 +31,16 @@ Initially based on the students' questions during conducting Java BootCamp in [I
   
 ...
 
+- step08 :: redirect different ways, passing data
+
+...
+
 - step10 :: Heroku deployment (actually separate project )
 
 ...
 
 - step13 :: spring. http session
+- step14 :: spring. http session #2
 
 ...
 
