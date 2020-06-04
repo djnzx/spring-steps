@@ -6,6 +6,7 @@ import app.forms.FormPayment;
 import app.session.CustomerDetails;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -35,8 +36,10 @@ public class AppController {
   @GetMapping("booking")
   public String handle_booking_get(
     @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
+      , Model m
   ) {
     log.info(fmt("GET -> /booking: %s", cd));
+    m.addAttribute("seat", cd.getSeat());
     return "1booking";
   }
 
@@ -55,8 +58,11 @@ public class AppController {
   @GetMapping("customer")
   public String handle_customer_get(
       @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
+      , Model m
   ) {
     log.info(fmt("GET -> /customer: %s", cd));
+    m.addAttribute("firstname", cd.getFirstname());
+    m.addAttribute("lastname", cd.getLastname());
     return "2customer";
   }
 
@@ -75,8 +81,10 @@ public class AppController {
   @GetMapping("payment")
   public String handle_payment_get(
       @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
+      , Model m
   ) {
     log.info(fmt("GET -> /payment: %s", cd));
+    m.addAttribute("cardno", cd.getCardno());
     return "3payment";
   }
 
@@ -95,9 +103,14 @@ public class AppController {
   @GetMapping("confirm")
   public String handle_confirm_get(SessionStatus status
       , @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
+                                   , Model m
   ) {
     log.info(fmt("GET -> /confirm: %s", cd));
-    status.setComplete();
+//    status.setComplete();
+    m.addAttribute("seat", cd.getSeat());
+    m.addAttribute("firstname", cd.getFirstname());
+    m.addAttribute("lastname", cd.getLastname());
+    m.addAttribute("cardno", cd.getCardno());
     return "4confirm";
   }
 }
