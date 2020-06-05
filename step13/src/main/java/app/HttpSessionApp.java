@@ -12,8 +12,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * http://localhost:8080/sess - HttpSession by Spring
  */
 @SpringBootApplication
-public class SpringStep13Session {
+public class HttpSessionApp {
   public static void main(String[] args) {
-    SpringApplication.run(SpringStep13Session.class);
+    SpringApplication.run(HttpSessionApp.class);
   }
 }

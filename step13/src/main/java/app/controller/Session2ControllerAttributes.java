@@ -7,14 +7,14 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpSession;
 
 /**
- * ==================
- * Session in general
- * explanation
- * ==================
+ * ====================
+ * Session + attributes
+ * manual
+ * ====================
  */
 @RestController
-@RequestMapping("/ses")
-public class SessionController {
+@RequestMapping("/ses2")
+public class Session2ControllerAttributes {
 
   @GetMapping
   public String response_get(HttpSession session) {

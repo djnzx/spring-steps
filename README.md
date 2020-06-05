@@ -39,8 +39,8 @@ Initially based on the students' questions during conducting Java BootCamp in [I
 
 ...
 
-- step13 :: spring. http session
-- step14 :: spring. http session #2
+- step13 :: HttpSession #1 - Basics + Attributes + Spring.
+- step14 :: HttpSession #2 - Real Word example.
 
 ...
 

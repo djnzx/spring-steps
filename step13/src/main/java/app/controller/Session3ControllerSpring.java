@@ -20,7 +20,7 @@ import javax.servlet.http.HttpSession;
  * by method marked with annotation `@ModelAttribute`
  */
 @RestController
-@RequestMapping("/sess")
+@RequestMapping("/ses3")
 /**
  * step 1.
  * declaration of our intentions:
@@ -29,7 +29,7 @@ import javax.servlet.http.HttpSession;
  * to further VALUE extraction from the SESSION
  */
 @SessionAttributes(SKeys.NAME1)
-public class SessionControllerSpring {
+public class Session3ControllerSpring {
 
   /**
    * step 2.
