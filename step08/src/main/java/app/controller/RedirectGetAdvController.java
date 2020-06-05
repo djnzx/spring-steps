@@ -14,39 +14,16 @@ import org.springframework.web.servlet.view.RedirectView;
  */
 @RequestMapping("/links")
 @Controller
-public class RedirectGetController {
+public class RedirectGetAdvController {
 
   /**
-   * http://localhost:8080/links/a
-   * to:
-   * http://localhost:8080/book
-   *
-   * generic approach
-   */
-  @GetMapping("a")
-  public String handle1() {
-    return "redirect:/book";
-  }
-
-  /**
-   * http://localhost:8080/links/b
-   * to:
-   * http://localhost:8080/book
-   *
-   * using RedirectView
-   */
-  @GetMapping("b")
-  public RedirectView handle2() {
-    return new RedirectView("/book");
-  }
-
-  /**
+   * redirect with parameters
    * http://localhost:8080/links/c
    * to:
    * http://localhost:8080/book?a=3
    *
    * using RedirectView
-   * with request parameter
+   * with request parameter (addAttribute)
    */
   @GetMapping("c")
   public RedirectView handle3(RedirectAttributes ra) {
@@ -61,6 +38,7 @@ public class RedirectGetController {
    *
    * using RedirectView
    * plus passing a model attribute
+   * addFlashAttribute will be but into Session and can be extracted further
    */
   @GetMapping("d")
   public RedirectView handle4(RedirectAttributes ra) {

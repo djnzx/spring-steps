@@ -2,6 +2,7 @@ package app.controller;
 
 import app.entity.Book;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -42,6 +43,13 @@ public class BookController {
     Object author = model.getAttribute("author");
     String name = (String) author;
     return new Book("Scala3", name);
+  }
+
+  @GetMapping("/z")
+  public Book handle_z(ModelMap model) {
+    Object author = model.getAttribute("author");
+    String name = (String) author;
+    return new Book("Scala4", name);
   }
 
 }
