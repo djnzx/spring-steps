@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 public class CustomerDetails {
-  public static final String ATTR_NAME = "cd";
+  public static final String ATTR = "cd";
 
   private String session;
 
