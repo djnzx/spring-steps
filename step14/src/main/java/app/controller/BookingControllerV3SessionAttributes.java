@@ -16,9 +16,9 @@ import javax.servlet.http.HttpSession;
 
 @Log4j2
 @Controller
-@RequestMapping("/")
+@RequestMapping("/v3")
 @SessionAttributes(names = { CustomerDetails.ATTR_NAME }, types = CustomerDetails.class)
-public class AppController {
+public class BookingControllerV3SessionAttributes {
 
   private static String fmt(String f, Object... as) {
     return String.format(f, as);
