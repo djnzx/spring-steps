@@ -17,38 +17,24 @@ import javax.servlet.http.HttpSession;
 @Log4j2
 @Controller
 @RequestMapping("/v2")
-@SessionAttributes(names = { CustomerDetails.ATTR_NAME }, types = CustomerDetails.class)
 public class BookingControllerV2Forms {
 
   private static String fmt(String f, Object... as) {
     return String.format(f, as);
   }
 
-  @ModelAttribute(CustomerDetails.ATTR_NAME)
-  public CustomerDetails create(HttpSession session) {
-    log.info(fmt("Creating new object CustomerDetails for session %s", session.getId()));
-    return new CustomerDetails(session.getId());
-  }
-
   /**
    * http://localhost:8080/booking
    */
   @GetMapping("booking")
-  public String handle_booking_get(
-    @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
-      , Model m
-  ) {
-    log.info(fmt("GET -> /booking: %s", cd));
-    m.addAttribute("seat", cd.getSeat());
+  public String handle_booking_get() {
+    log.info("GET -> /booking");
     return "1booking";
   }
 
   @PostMapping("booking")
-  public RedirectView handle_booking_post(FormBooking form, RedirectAttributes attr
-    , @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
-  ) {
-    log.info(fmt("POST -> /booking: %s", cd));
-    log.info(form);
+  public RedirectView handle_booking_post(FormBooking form) {
+    log.info(fmt("POST -> /booking: %s", form));
     return new RedirectView("customer");
   }
 
@@ -56,22 +42,14 @@ public class BookingControllerV2Forms {
    * http://localhost:8080/customer
    */
   @GetMapping("customer")
-  public String handle_customer_get(
-      @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
-      , Model m
-  ) {
-    log.info(fmt("GET -> /customer: %s", cd));
-    m.addAttribute("firstname", cd.getFirstname());
-    m.addAttribute("lastname", cd.getLastname());
+  public String handle_customer_get() {
+    log.info("GET -> /customer");
     return "2customer";
   }
 
   @PostMapping("customer")
-  public RedirectView handle_customer_post(FormCustomer form, RedirectAttributes attr
-      , @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
-  ) {
-    log.info(fmt("POST -> /customer: %s", cd));
-    log.info(form);
+  public RedirectView handle_customer_post(FormCustomer form) {
+    log.info(fmt("POST -> /customer: %s", form));
     return new RedirectView("payment");
   }
 
@@ -79,21 +57,14 @@ public class BookingControllerV2Forms {
    * http://localhost:8080/payment
    */
   @GetMapping("payment")
-  public String handle_payment_get(
-      @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
-      , Model m
-  ) {
-    log.info(fmt("GET -> /payment: %s", cd));
-    m.addAttribute("cardno", cd.getCardno());
+  public String handle_payment_get() {
+    log.info("GET -> /payment");
     return "3payment";
   }
 
   @PostMapping("payment")
-  public RedirectView handle_payment_post(FormPayment form, RedirectAttributes attr
-      , @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
-  ) {
-    log.info(fmt("POST -> /payment: %s", cd));
-    log.info(form);
+  public RedirectView handle_payment_post(FormPayment form) {
+    log.info(fmt("POST -> /payment: %s", form));
     return new RedirectView("confirm");
   }
 
@@ -101,16 +72,8 @@ public class BookingControllerV2Forms {
    * http://localhost:8080/confirm
    */
   @GetMapping("confirm")
-  public String handle_confirm_get(SessionStatus status
-      , @ModelAttribute(CustomerDetails.ATTR_NAME) CustomerDetails cd
-                                   , Model m
-  ) {
-    log.info(fmt("GET -> /confirm: %s", cd));
-//    status.setComplete();
-    m.addAttribute("seat", cd.getSeat());
-    m.addAttribute("firstname", cd.getFirstname());
-    m.addAttribute("lastname", cd.getLastname());
-    m.addAttribute("cardno", cd.getCardno());
+  public String handle_confirm_get() {
+    log.info("GET -> /confirm");
     return "4confirm";
   }
 }

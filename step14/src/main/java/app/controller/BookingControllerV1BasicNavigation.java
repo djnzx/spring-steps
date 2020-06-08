@@ -9,7 +9,7 @@ import org.springframework.web.servlet.view.RedirectView;
 
 @Log4j2
 @Controller
-@RequestMapping("/")
+@RequestMapping("/v1")
 public class BookingControllerV1BasicNavigation {
 
   /**
