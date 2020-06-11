@@ -1,0 +1,26 @@
+<!doctype html>
+<html  xmlns:th="https://www.thymeleaf.org"
+        lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<h1>Error Page</h1>
+<p>Application has encountered an error. Please contact support on ...</p>
+Failed URL:<p th:text="${url}"></p>
+Exception:<p th:text="${exception.message}"></p>
+
+<table style="visibility: hidden">
+        <tr th:each="ste :${exception.stackTrace}">
+            <td th:text="${ste}"></td>
+        </tr>
+</table>
+
+</body>
+</html>

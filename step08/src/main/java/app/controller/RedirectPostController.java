@@ -27,7 +27,9 @@ public class RedirectPostController {
   @PostMapping("a")
   public ModelAndView redirectPost(HttpServletRequest rq) {
     // need to setup this, else you will GET redirect
-    rq.setAttribute(View.RESPONSE_STATUS_ATTRIBUTE, HttpStatus.TEMPORARY_REDIRECT);
+    rq.setAttribute(
+        View.RESPONSE_STATUS_ATTRIBUTE,
+        HttpStatus.TEMPORARY_REDIRECT);
     return new ModelAndView("redirect:/payment/handle");
   }
 
