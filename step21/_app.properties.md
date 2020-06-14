@@ -12,4 +12,4 @@
 - `spring.h2.console.settings.web-allow-others=false`
 
 p.s. these are default values.
-all of them can be omitted
+all of them can be omitted.
