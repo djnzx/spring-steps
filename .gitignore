@@ -1,5 +1,5 @@
-# `.idea` folder in the root directory
-/.idea/
+# `.idea` folder in all sub-directories
+**/.idea/
 
 # `target/` folder in all sub-directories
 **/target/*
