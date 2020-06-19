@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.util.List;
+import java.util.Optional;
 
 @Data
 @Entity
@@ -30,4 +31,14 @@ public class Book {
    */
   @ManyToMany(mappedBy = "books")
   private List<Author> authors;
+
+  /**
+   * smart way to handle
+   * 1:N or 1:1 via M:N
+   */
+  public Optional<Author> author() {
+    return authors == null || authors.size() == 0 ?
+        Optional.empty() : Optional.of(authors.get(0));
+  }
+
 }
