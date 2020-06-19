@@ -15,7 +15,8 @@ import java.util.HashSet;
 @Table(name = "phone")
 public class Phone {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "ph_id")
   @JsonView(Views.NoNested.class)
   private long id;

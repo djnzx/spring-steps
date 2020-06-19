@@ -14,7 +14,8 @@ import java.util.Set;
 @Table(name = "person")
 public class Person {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private long id;
 

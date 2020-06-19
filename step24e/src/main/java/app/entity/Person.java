@@ -18,7 +18,8 @@ import java.util.stream.StreamSupport;
 @Table(name = "person")
 public class Person {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "p_id")
   @JsonView(Views.NoNested.class)
   private long id;

@@ -35,7 +35,8 @@ Initially based on the students' questions during conducting Java BootCamp in [I
 
 ...
 
-- step10 :: Heroku deployment (actually separate project )
+- step10 :: Heroku deployment (actually separate project)
+- step11 :: Exceptions handling
 
 ...
 
@@ -48,18 +49,20 @@ Initially based on the students' questions during conducting Java BootCamp in [I
 
 ...
 
-- step21 :: spring data. basics
+- step21 :: spring data. basics. intro
 - step22 :: spring data. relations. 1:1 (**1** `Person` entity has a relation with **1** `Extra` entity)
-- step22a :: implementation via `FK` 
+- step22a :: implementation via `FK`
 - step22b :: implementation via `shared PK`
-- step22c :: implementation via `3rd table` 
-- step23 :: spring data. relations. 1:N (**1** `Person` entity has a relation with **N** `Extra` entity)
-- step23a :: implementation via `FK` 
+- step22c :: implementation via `3rd table`
+- step23 :: spring data. relations. 1:N (**1** `Person` entity has a relation with **N** `Phone` entity)
+- step23a :: implementation via `FK`
 - step23b :: implementation via `3rd table`
-- step24 :: spring data. relations. M:N (**M** `Person` entities have a relations with **N** `Extra` entities)
+- step24 :: spring data. relations. M:N (**M** `Author` entities have a relations with **N** `Book` entities)
 implementation via `3rd table`
+- step24a :: bidirectional (authors >-< books) via `one` reference table
+- step24b :: unidirectional (author -< books + authors >- book) via `two` reference tables
 - step24d :: spring data. relations. M:N. working with data. (insertion data/relation, deletion data/relations)
-- step24d :: spring data. relations. M:N. working with data. (data selection)
+- step24e :: spring data. relations. M:N. working with data. (data selection)
 
 ...
 
@@ -78,6 +81,8 @@ implementation via `3rd table`
 
 ### Links
 
+- Excellent resource: [Vlad Mihalcea's Blog](https://vladmihalcea.com/postgresql-serial-column-hibernate-identity/)
+- Cool tool: [Vlad CLI](https://maciejwalkowiak.com/blog/how-i-built-vlad-cli/)
 - Spring official guides: [spring.io/guides](https://spring.io/guides)
 - Baeldung site with enormous amount of useful information: [www.baeldung.com](https://www.baeldung.com)
 - Official repositories to book **Spring in Action 5**: [github.com/habuma](https://github.com/habuma/spring-in-action-5-samples.git)

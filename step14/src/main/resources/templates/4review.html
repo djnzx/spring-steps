@@ -10,11 +10,14 @@
     </head>
 
     <body>
-        3.payment
         <form method="post">
-            <input type="text" th:value="${cardno}" name="cardno"><br>
-            <a href="customer">back</a>
-            <input type="submit" value="4.review">
+            4.review
+            <p th:text="${seat}"></p>
+            <p th:text="${firstname}"></p>
+            <p th:text="${lastname}"></p>
+            <p th:text="${cardno}"></p>
+            <a href="payment">back</a>
+            <input type="submit" value="5.confirm">
         </form>
     </body>
 

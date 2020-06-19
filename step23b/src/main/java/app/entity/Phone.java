@@ -13,7 +13,8 @@ import javax.persistence.*;
 @Table(name = "phone")
 public class Phone {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "ph_id")
   private long id;
 

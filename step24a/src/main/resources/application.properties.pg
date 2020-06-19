@@ -1,5 +1,10 @@
+server.port=${PORT:8080}
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/ibatech
 spring.datasource.username=postgres
 spring.datasource.password=secret
+
 spring.jpa.generate-ddl=true
-spring.jpa.hibernate.ddl-auto=update
+spring.jpa.hibernate.ddl-auto=create
+
+spring.jpa.show-sql=true

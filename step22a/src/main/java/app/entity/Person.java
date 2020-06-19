@@ -13,7 +13,8 @@ import javax.persistence.*;
 public class Person {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "id")
   private final long id;
 
@@ -31,7 +32,7 @@ public class Person {
    *
    * `extra`    - field to access to related entity from Java
    */
-  @OneToOne(cascade = CascadeType.ALL)
+  @OneToOne//(cascade = CascadeType.ALL)
   @JoinColumn(name = "extra_id", referencedColumnName = "x_id")
   private Extra extra;
 

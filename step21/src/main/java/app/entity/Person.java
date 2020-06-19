@@ -9,6 +9,9 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.util.Date;
 
+// https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-2.3-Release-Notes#validation-starter-no-longer-included-in-web-starters
+// https://habr.com/ru/post/265061/
+// https://stackoverflow.com/questions/2305973/java-util-date-vs-java-sql-date
 @Data
 @NoArgsConstructor(access = AccessLevel.PRIVATE, force=true)
 @Entity

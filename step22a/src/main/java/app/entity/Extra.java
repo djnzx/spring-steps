@@ -10,7 +10,8 @@ import javax.persistence.*;
 public class Extra {
 
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "x_id")
   private long id;
 

@@ -10,14 +10,14 @@ import org.springframework.web.servlet.view.RedirectView;
 @Log4j2
 @Controller
 @RequestMapping("/v1")
-public class BookingControllerV1BasicNavigation {
+public class BookingControllerV1Basic {
 
   /**
    * http://localhost:8080/booking
    */
   @GetMapping("booking")
   public String handle_booking_get() {
-    log.info("GET -> /booking");
+    log.info("GET  -> /booking");
     return "1booking";
   }
 
@@ -32,13 +32,12 @@ public class BookingControllerV1BasicNavigation {
    */
   @GetMapping("customer")
   public String handle_customer_get() {
-    log.info("GET -> /customer");
+    log.info("GET  -> /customer");
     return "2customer";
   }
 
   @PostMapping("customer")
-  public RedirectView handle_customer_post(
-  ) {
+  public RedirectView handle_customer_post() {
     log.info("POST -> /customer");
     return new RedirectView("payment");
   }
@@ -48,13 +47,28 @@ public class BookingControllerV1BasicNavigation {
    */
   @GetMapping("payment")
   public String handle_payment_get() {
-    log.info("GET -> /payment");
+    log.info("GET  -> /payment");
     return "3payment";
   }
 
   @PostMapping("payment")
   public RedirectView handle_payment_post() {
     log.info("POST -> /payment");
+    return new RedirectView("review");
+  }
+
+  /**
+   * http://localhost:8080/review
+   */
+  @GetMapping("review")
+  public String handle_review_get() {
+    log.info("GET  -> /review");
+    return "4review";
+  }
+
+  @PostMapping("review")
+  public RedirectView handle_review_post() {
+    log.info("POST -> /review");
     return new RedirectView("confirm");
   }
 
@@ -63,7 +77,8 @@ public class BookingControllerV1BasicNavigation {
    */
   @GetMapping("confirm")
   public String handle_confirm_get() {
-    log.info("GET -> /confirm");
-    return "4confirm";
+    log.info("GET  -> /confirm");
+    return "5confirm";
   }
+
 }

@@ -13,6 +13,8 @@ public class Extra {
    * this column actually will be called `person_id`
    */
   @Id
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "x_id")
   private long id;
 

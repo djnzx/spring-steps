@@ -13,7 +13,8 @@ import javax.persistence.*;
 @Table(name = "person")
 public class Person {
   @Id
-  @GeneratedValue(strategy = GenerationType.AUTO)
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   @Column(name = "p_id")
   private long id;
 
@@ -23,9 +24,11 @@ public class Person {
   @OneToOne(cascade = CascadeType.ALL)
   @JoinTable(name = "r_person_extra",
       joinColumns =
-          { @JoinColumn(name = "person_id", referencedColumnName = "p_id") },
+          { @JoinColumn(name = "person_id",
+              referencedColumnName = "p_id") },
       inverseJoinColumns =
-          { @JoinColumn(name = "extra_id", referencedColumnName = "x_id") })
+          { @JoinColumn(name = "extra_id",
+              referencedColumnName = "x_id") })
   private Extra3 extra;
 
 }

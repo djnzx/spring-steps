@@ -14,7 +14,8 @@ import javax.persistence.Id;
 public class Event {
 
   @Id
-  @GeneratedValue
+  // to enable Postgres sequence
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
   private long pk;
 
   private long delta;
