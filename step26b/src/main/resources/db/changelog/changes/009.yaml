@@ -1,0 +1,12 @@
+databaseChangeLog:
+- changeSet:
+    id: 1592770437287-1
+    author: alexr (generated)
+    changes:
+    - createTable:
+        columns:
+        - column:
+            name: ecolumn_1
+            type: INTEGER
+        tableName: e
+

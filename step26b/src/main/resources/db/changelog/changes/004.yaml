@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1592767433530-1
+      author: alexr (generated)
+      changes:
+        - dropTable:
+            tableName: a

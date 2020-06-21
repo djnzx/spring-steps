@@ -63,6 +63,8 @@ implementation via `3rd table`
 - step24b :: unidirectional (author -< books + authors >- book) via `two` reference tables
 - step24d :: spring data. relations. M:N. working with data. (insertion data/relation, deletion data/relations)
 - step24e :: spring data. relations. M:N. working with data. (data selection)
+- step26a :: spring data. metadata/data initialization by JPA (schema.sql + data.sql)
+- step26b :: spring data. metadata/data manage by liquibase
 
 ...
 
@@ -81,8 +83,9 @@ implementation via `3rd table`
 
 ### Links
 
-- Excellent resource: [Vlad Mihalcea's Blog](https://vladmihalcea.com/postgresql-serial-column-hibernate-identity/)
-- Cool tool: [Vlad CLI](https://maciejwalkowiak.com/blog/how-i-built-vlad-cli/)
+- Spring official how-tos [docs.spring.io](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-execute-liquibase-database-migrations-on-startup)
 - Spring official guides: [spring.io/guides](https://spring.io/guides)
+- Excellent resource about persistence: [Vlad Mihalcea's Blog](https://vladmihalcea.com/postgresql-serial-column-hibernate-identity/)
+- Cool tool: [Vlad CLI](https://maciejwalkowiak.com/blog/how-i-built-vlad-cli/)
 - Baeldung site with enormous amount of useful information: [www.baeldung.com](https://www.baeldung.com)
-- Official repositories to book **Spring in Action 5**: [github.com/habuma](https://github.com/habuma/spring-in-action-5-samples.git)
+- Official repositories to the book **Spring in Action 5**: [github.com/habuma](https://github.com/habuma/spring-in-action-5-samples.git)

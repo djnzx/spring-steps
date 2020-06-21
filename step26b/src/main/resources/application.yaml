@@ -1,0 +1,20 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ibatech
+    username: postgres
+    password: secret
+
+# to use liquibase properly we need to switch off
+# all the ways to automatically manage our data
+
+    initialization-mode: never
+
+  jpa:
+    hibernate:
+      ddl-auto: none
+    generate-ddl: false
+
+  liquibase:
+    enabled: true
+    change-log: classpath:/db/changelog/master.yaml
+

@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1592767362952-1
+      author: alexr (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: b_pk
+                  name: bb
+                  type: SERIAL
+            tableName: b
+
