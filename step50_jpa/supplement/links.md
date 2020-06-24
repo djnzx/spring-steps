@@ -1,0 +1,2 @@
+- [Liquibase и Maven](https://habr.com/ru/post/436994/)
+- [JHU 605.784.31](https://webdev.jhuep.com/~jcs/ejava-javaee/coursedocs/content/html/jhu784-lab-book.html)

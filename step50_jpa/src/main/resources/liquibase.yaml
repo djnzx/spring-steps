@@ -1,0 +1,18 @@
+# production
+url: jdbc:postgresql://localhost:5432/ibatech
+username: postgres
+password: secret
+
+# dev
+referenceUrl: jdbc:postgresql://localhost:5432/ibatech_dev
+referenceUsername: postgres
+referencePassword: secret
+
+# for usage: mvn liquibase:changelogSync
+changeLogFile: src/main/resources/db/changelog/master.yaml
+
+# for generation step 1: mvn liquibase:generateChangeLog
+outputChangeLogFile: src/main/resources/db/changelog/liquibase-outputChangeLog.yaml
+
+# for generation step N: mvn liquibase:diff
+diffChangeLogFile: src/main/resources/db/changelog/changes/diff.yaml

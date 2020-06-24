@@ -31,8 +31,8 @@ public class AutoRun {
     this.phoneRepo = phoneRepo;
   }
 
-  @Bean
-  @Order(1)
+//  @Bean
+//  @Order(1)
   public CommandLineRunner populate_phones() {
     return args -> {
       /**
@@ -59,8 +59,8 @@ public class AutoRun {
     };
   }
 
-  @Bean
-  @Order(2)
+//  @Bean
+//  @Order(2)
   public CommandLineRunner populate_people() {
     return args -> {
       /**
@@ -80,8 +80,8 @@ public class AutoRun {
     };
   }
 
-  @Bean
   @Order(3)
+  @Bean
   public CommandLineRunner populate_people_with_phones() {
     return args -> {
       /**
@@ -106,8 +106,8 @@ public class AutoRun {
     };
   }
 
-  @Bean
-  @Order(4)
+//  @Bean
+//  @Order(4)
   public CommandLineRunner populate_people_with_already_existed_phones() {
     return new CommandLineRunner() {
       @Transactional
@@ -157,8 +157,8 @@ public class AutoRun {
     };
   }
 
-  @Bean
-  @Order(5)
+//  @Bean
+//  @Order(5)
   public CommandLineRunner adding_one_phone_to_already_existing_person() {
     return new CommandLineRunner() {
       @Transactional
@@ -187,8 +187,8 @@ public class AutoRun {
     };
   }
 
-  @Bean
-  @Order(6)
+//  @Bean
+//  @Order(6)
   public CommandLineRunner delete_one_phone_from_already_existing_person() {
     return new CommandLineRunner() {
       @Transactional
@@ -221,8 +221,8 @@ public class AutoRun {
     };
   }
 
-  @Bean
-  @Order(7)
+//  @Bean
+//  @Order(7)
   public CommandLineRunner inserting_many_to_many() {
     return new CommandLineRunner() {
       @Transactional

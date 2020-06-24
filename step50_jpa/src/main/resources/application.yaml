@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/ibatech_dev
+    username: postgres
+    password: secret
+    initialization-mode: never
+
+  jpa:
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+  liquibase:
+    enabled: false
+    change-log: classpath:/db/changelog/master.yaml

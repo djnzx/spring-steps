@@ -1,0 +1,19 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1592761077837-1
+      author: alexr (generated)
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: users_pk
+                  name: id
+                  type: SERIAL
+              - column:
+                  name: name
+                  type: VARCHAR
+            tableName: users
