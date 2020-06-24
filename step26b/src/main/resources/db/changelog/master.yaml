@@ -27,3 +27,7 @@ databaseChangeLog:
       file: db/changelog/changes/013.yaml
   - include:
       file: db/changelog/changes/014.yaml
+  - include:
+      file: db/changelog/changes/015.sql
+  - include:
+      file: db/changelog/changes/016.sql
