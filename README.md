@@ -67,7 +67,8 @@ implementation via `3rd table`
 - step26b :: spring data. metadata/data manage by liquibase
 
 ...
-
+- step30s :: HttpRequest by Spring RestTemplate. Server 
+- step30c :: HttpRequest by Spring RestTemplate. Client
 - step31 :: spring security. intro 
 - step32 :: spring security. dependency
 - step33 :: spring security. users hardcoded
