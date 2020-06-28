@@ -42,10 +42,7 @@ Initially based on the students' questions during conducting Java BootCamp in [I
 
 - step13 :: HttpSession #1 - Basics + Attributes + Spring.
 - step14 :: HttpSession #2 - Real Word example.
-
-...
-
-- step15 :: spring MVC + spring data. basic example
+- step15 :: HttpSession $3 - Spring MVC + Spring Data. Example from Book "Spring in Action".
 
 ...
 
@@ -67,6 +64,8 @@ implementation via `3rd table`
 - step26b :: spring data. metadata/data manage by liquibase
 
 ...
+
+- step29 :: parsing with JSoup
 - step30s :: HttpRequest by Spring RestTemplate. Server 
 - step30c :: HttpRequest by Spring RestTemplate. Client
 - step31 :: spring security. intro 
