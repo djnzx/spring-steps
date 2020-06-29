@@ -1,8 +1,9 @@
 package app.entity;
 
-import lombok.Value;
+import lombok.AllArgsConstructor;
 
-@Value
+@AllArgsConstructor
 public class Artifact {
-  public String name;
+  public final String name;
+  public final String pictureUrl;
 }

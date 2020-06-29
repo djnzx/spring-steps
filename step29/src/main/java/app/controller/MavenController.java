@@ -2,8 +2,7 @@ package app.controller;
 
 import app.entity.Artifact;
 import app.entity.Tag;
-import app.service.MavenParserService;
-import app.service.MavenParserService9;
+import app.service.MavenParserService3;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,18 +13,18 @@ import java.util.Collection;
 @RequestMapping("/maven")
 public class MavenController {
 
-  private final MavenParserService9 mavenParser;
+  private final MavenParserService3 mavenParserService;
 
-  public MavenController(MavenParserService9 mavenParser) {
-    this.mavenParser = mavenParser;
+  public MavenController(MavenParserService3 mavenParserService) {
+    this.mavenParserService = mavenParserService;
   }
 
   /**
    * http://localhost:8080/maven/artifacts
    */
   @GetMapping("artifacts")
-  public Collection<Artifact> handle_artifacts() {
-    return mavenParser.artifacts();
+  public Collection<Artifact> handle_news() {
+    return mavenParserService.artifacts();
   }
 
   /**
@@ -33,7 +32,7 @@ public class MavenController {
    */
   @GetMapping("tags")
   public Collection<Tag> handle_tags() {
-    return mavenParser.tags();
+    return mavenParserService.tags();
   }
 
 }
