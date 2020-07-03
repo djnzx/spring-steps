@@ -68,18 +68,19 @@ implementation via `3rd table`
 - step29 :: parsing with JSoup
 - step30s :: HttpRequest by Spring RestTemplate. Server 
 - step30c :: HttpRequest by Spring RestTemplate. Client
-- step31 :: spring security. intro 
-- step32 :: spring security. dependency
-- step33 :: spring security. users hardcoded
-- step34 :: spring security. users in the class
-- step35 :: spring security. users in the class. password encoded
-- step36 :: spring security. users in the database
-- step37 :: spring security. users in the database without fetching all by implementing `UserDetailsService`
-- step38 :: spring security. authorization configuration
-- step39 :: spring security. extra configuration examples
-- step41 :: spring security. Secure your API. basic idea
-- step42 :: spring security. Secure your API. Stateless implementation base on JWT-token
-- step43 :: spring security. Secure your API. get rid of MVC part + static resources mappings
+- step31 :: Spring Security. intro.
+- step32 :: Spring Security. dependency.
+- step33 :: Spring Security. users hardcoded.
+- step34 :: Spring Security. users in the class.
+- step35 :: Spring Security. users in the class. password encoded.
+- step36 :: Spring Security. users in the database.
+- step37 :: Spring Security. users in the database without fetching all by implementing `UserDetailsService`.
+- step37 :: Spring Security. custom UserDetails, custom UserDetailsService (step 37 polished).
+- step38 :: Spring Security. authorization configuration.
+- step39 :: Spring Security. extra configuration examples.
+- step41 :: Spring Security. Secure your API. basic idea.
+- step42 :: Spring Security. Secure your API. Stateless implementation base on JWT-token.
+- step43 :: Spring Security. Secure your API. get rid of MVC part + static resources mappings.
 
 ### Links
 
