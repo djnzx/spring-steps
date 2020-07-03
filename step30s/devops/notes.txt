@@ -1,0 +1,11 @@
+https://exchangeratesapi.io
+https://rapidapi.com/apidojo/api/yahoo-finance1/endpoints
+
+https://spring.io/guides/gs/consuming-rest/
+https://gturnquist-quoters.cfapps.io/api/random
+
+https://www.baeldung.com/rest-template
+https://www.baeldung.com/httpclient-post-http-request
+https://www.baeldung.com/how-to-use-resttemplate-with-basic-authentication-in-spring
+https://www.baeldung.com/spring-rest-template-multipart-upload
+https://www.baeldung.com/spring-resttemplate-post-json
