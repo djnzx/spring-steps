@@ -1,0 +1,7 @@
+kafka:
+  topic: topic1
+  bootstrap-servers: 192.168.5.103:32770
+  producer-properties:
+    key.serializer: org.apache.kafka.common.serialization.StringSerializer
+    value.serializer: org.apache.kafka.common.serialization.StringSerializer
+    max.request.size: 23068672
