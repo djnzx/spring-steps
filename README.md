@@ -87,6 +87,7 @@ implementation via `3rd table`
 - Spring official how-tos [docs.spring.io](https://docs.spring.io/spring-boot/docs/current/reference/html/howto.html#howto-execute-liquibase-database-migrations-on-startup)
 - Spring official guides: [spring.io/guides](https://spring.io/guides)
 - Excellent resource about persistence: [Vlad Mihalcea's Blog](https://vladmihalcea.com/postgresql-serial-column-hibernate-identity/)
+- [1:N](https://vladmihalcea.com/the-best-way-to-use-the-manytomany-annotation-with-jpa-and-hibernate/?utm_content=bufferd7c56&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer)
 - One more resource about Hibernate: [Thorben Janssen's Blog](https://thorben-janssen.com)
 - Cool tool: [Vlad CLI](https://maciejwalkowiak.com/blog/how-i-built-vlad-cli/)
 - Baeldung site with enormous amount of useful information: [www.baeldung.com](https://www.baeldung.com)
