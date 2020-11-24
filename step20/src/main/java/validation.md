@@ -1,0 +1,2 @@
+- [](https://reflectoring.io/bean-validation-with-spring-boot/)
+- [](https://spring-projects.ru/guides/validating-form-input/)

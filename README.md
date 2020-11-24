@@ -45,7 +45,7 @@ Initially based on the students' questions during conducting Java BootCamp in [I
 - step15 :: HttpSession $3 - Spring MVC + Spring Data. Example from Book "Spring in Action".
 
 ...
-
+- step20 :: validation: form validation. dto validation. programmatic validation. custom validation
 - step21 :: spring data. basics. intro
 - step22 :: spring data. relations. 1:1 (**1** `Person` entity has a relation with **1** `Extra` entity)
 - step22a :: implementation via `FK`
