@@ -92,3 +92,4 @@ implementation via `3rd table`
 - Cool tool: [Vlad CLI](https://maciejwalkowiak.com/blog/how-i-built-vlad-cli/)
 - Baeldung site with enormous amount of useful information: [www.baeldung.com](https://www.baeldung.com)
 - Official repositories to the book **Spring in Action 5**: [github.com/habuma](https://github.com/habuma/spring-in-action-5-samples.git)
+- [Spring Data Reference](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
