@@ -1,6 +1,7 @@
 package dtovalidation;
 
 import dtovalidation.dto.RqUserRegister;
+import org.springframework.validation.ValidationUtils;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
