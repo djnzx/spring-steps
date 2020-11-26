@@ -1,0 +1,9 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/fs11
+    username: postgres
+    password: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
