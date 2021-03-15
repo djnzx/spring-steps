@@ -93,3 +93,8 @@ implementation via `3rd table`
 - Baeldung site with enormous amount of useful information: [www.baeldung.com](https://www.baeldung.com)
 - Official repositories to the book **Spring in Action 5**: [github.com/habuma](https://github.com/habuma/spring-in-action-5-samples.git)
 - [Spring Data Reference](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
+
+### TODO:
+- web socket: https://github.com/alexr007/websocket.git
+- validation: https://github.com/spring-guides/gs-validating-form-input.git
+- oauth2: https://github.com/spring-guides/tut-spring-boot-oauth2.git
