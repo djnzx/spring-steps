@@ -95,6 +95,7 @@ implementation via `3rd table`
 - [Spring Data Reference](https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#jpa.query-methods.query-creation)
 
 ### TODO:
+- actuator: 
 - web socket: https://github.com/alexr007/websocket.git
 - validation: https://github.com/spring-guides/gs-validating-form-input.git
 - oauth2: https://github.com/spring-guides/tut-spring-boot-oauth2.git
