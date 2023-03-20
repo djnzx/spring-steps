@@ -68,6 +68,7 @@ implementation via `3rd table`
 - step29 :: parsing with JSoup
 - step30s :: HttpRequest by Spring RestTemplate. Server 
 - step30c :: HttpRequest by Spring RestTemplate. Client
+- step30fc :: Client. SpringCloud. FeignClient
 - step31 :: Spring Security. intro.
 - step32 :: Spring Security. dependency.
 - step33 :: Spring Security. users hardcoded.

@@ -2,18 +2,14 @@ package app.controller;
 
 import app.entity.Person;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/person")
 public class PersonController {
 
-  /**
-   * http://localhost:8081/person
-   */
-  @GetMapping
-  public Person handle() {
-    return new Person(33, "Jim");
+  @GetMapping("person")
+  public Person handle(@RequestParam("id") Integer id) {
+    return new Person(id, "Jim");
   }
 }
